@@ -1,16 +1,14 @@
 schema_version: 1
 
 context:
-  name: pyhanko
-  version: "0.38.0"
-  python_min: "3.10"
+  version: 0.38.0
 
 package:
-  name: ${{ name|lower }}
+  name: pyhanko
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/p/pyhanko/pyhanko-${{ version }}.tar.gz
   sha256: 267d6d3fa460b0f0e9c5362a2d7979dccbe1e6b1f8d89ba0818dd0c45b5f300e
 
 build:
@@ -54,4 +52,3 @@ extra:
   recipe-maintainers:
     - mrakitin
     - killua156
-
