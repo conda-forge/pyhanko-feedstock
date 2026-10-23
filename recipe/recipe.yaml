@@ -1,0 +1,54 @@
+schema_version: 1
+
+context:
+  version: 0.38.0
+
+package:
+  name: pyhanko
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/p/pyhanko/pyhanko-${{ version }}.tar.gz
+  sha256: 267d6d3fa460b0f0e9c5362a2d7979dccbe1e6b1f8d89ba0818dd0c45b5f300e
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools >=80.8.0
+  run:
+    - python >=${{ python_min }}
+    - asn1crypto >=1.5.1
+    - tzlocal >=4.3
+    - pyhanko-certvalidator >=0.33.0,<0.34
+    - aiohttp <3.15,>=3.9
+    - cryptography >=48.0.0
+    - lxml >=5.4.0
+
+tests:
+  - python:
+      imports:
+        - pyhanko
+        - pyhanko.pdf_utils
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
+
+about:
+  summary: Tools for stamping and signing PDF files
+  license: MIT
+  license_file:
+    - LICENSE
+    - src/pyhanko/pdf_utils/LICENSE.PyPDF2
+  homepage: https://github.com/MatthiasValvekens/pyHanko
+
+extra:
+  recipe-maintainers:
+    - mrakitin
+    - killua156
