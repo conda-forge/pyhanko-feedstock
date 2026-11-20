@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.38.1"
+  version: "0.38.2"
 
 package:
   name: pyhanko
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/p/pyhanko/pyhanko-${{ version }}.tar.gz
-  sha256: 27348b2bb5c6756402102a930b3404a1ccce4d1102f81e56399df268dd90f70d
+  sha256: 2c18ab33367ee8df2df81637a2a321951d769ed7194d9c5aa04a5b5041c33d82
 
 build:
   number: 0
